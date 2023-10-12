@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./app.js"></script>
+    <title>Rumus Gerak Lurus Beraturan</title>
+    <style>
+        body h1 {
+            font-size: 25px;
+            color: blue;
+            font-weight: 900;
+            text-align: center;
+            margin: 2px;
+        }
+
+        .label {
+            font-size: 20px;
+            color: rgb(16, 33, 97);
+            padding-bottom: 4px;
+            padding-top: 8px;
+        }
+
+        .inputText {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .buttonTest {
+            margin-top: 10px;
+            padding: 20px;
+            background-color: #FF2013;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            border: none;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            ;
+        }
+
+        .buttonTest:hover {
+            background-color: #681e17;
+        }
+        .container {
+            margin: auto;
+            margin-right: 50px;
+            width: 50%;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rumus hitung mencari waktu tempuh</h1>
+    <h1>Dibuat Oleh : Agus Wibowo</h1>
+    <hr>
+    <div class="container">
+        <div>
+            <div class="label">Jarak </div>
+            <input class="inputText" type="number" id="jarakDuaTitik" />
+        </div>
+        <div>
+            <div class="label">Kecepatan </div>
+            <input class="inputText" type="number" id="kecepatanKendaraan" />
+        </div>
+        <div>
+            <button id="btnHitung" class="buttonTest">Hitung Waktu Tempuh</button>
+        </div>
+        <div id="hasil">
+
+        </div>
+    </div>
+
+
+</body>
+<footer>
+    <script type="module">
+        $('#btnHitung').on('click', function (a) {
+            a.preventDefault();
+            var jarak = $('#jarakDuaTitik').val();
+            var kecepatan = $('#kecepatanKendaraan').val();
+            if (jarak != '' && kecepatan != '') {
+                var waktu = jarak / kecepatan;
+                $('#hasil').html(waktu);
+            } else {
+                alert('Form tidak boleh kosong');
+            }
+        });
+    </script>
+</footer>
+
+</html>
